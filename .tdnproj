@@ -1,0 +1,25 @@
+{
+  "target-version": [
+    1,
+    16,
+    0
+  ],
+  "default-namespace": "smoochypit",
+  "language-level": 2,
+  "datapack-output": "C:\\Users\\smooc\\Trident\\workspace\\iteminfos\\out\\iteminfos",
+  "resources-output": "C:\\Users\\smooc\\Trident\\workspace\\iteminfos\\out\\iteminfos-resources.zip",
+  "clear-datapack-output": false,
+  "clear-resources-output": false,
+  "export-comments": true,
+  "export-gamelog": true,
+  "strict-nbt": false,
+  "strict-text-components": false,
+  "anonymous-function-name": "_anonymous*",
+  "using-all-plugins": false,
+  "game-logger": {
+    "compact": false,
+    "timestamp-enabled": true,
+    "pos-enabled": true,
+    "line-number-enabled": false
+  }
+}

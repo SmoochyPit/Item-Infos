@@ -1,0 +1,51 @@
+@ tag tick
+@ require smoochypit:iteminfos/compass
+
+define objective ii.sneak minecraft.custom:minecraft.sneak_time
+set @a->ii.sneak += 0
+
+tag @a remove ii.displaying_actionbar
+
+using tag ii.has_displayed_item @a {
+    
+    as @a[tag=ii.has_displayed_item] expand {
+    
+        if entity @s[predicate=smoochypit:iteminfos/hold_compass,tag=!global.ignore.gui] function {
+        
+            tag @s add ii.displaying_actionbar
+            tag @s remove ii.has_displayed_item
+            
+            function smoochypit:iteminfos/compass/update_pos
+        
+            if entity @s[
+                scores={
+                    ii.sneak=0
+                }
+            ] 
+            function smoochypit:iteminfos/compass/actionbar_display
+        
+            if entity @s[
+                scores={
+                    ii.sneak=1
+                }
+            ] 
+            function {
+                    
+                function smoochypit:iteminfos/compass/update_pos_frac
+                function smoochypit:iteminfos/compass/actionbar_display_frac
+                
+            }
+        
+        }
+    
+        #TODO 1.17 Compass Lore Implementation
+        
+        #TODO Clock Implementation
+        
+        #TODO Light Sensor
+
+    }
+    
+}
+
+set @a->ii.sneak = 0

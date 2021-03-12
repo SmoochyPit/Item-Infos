@@ -1,0 +1,11 @@
+{
+  "datapack/data/global/advancements/root.json": 717491058,
+  "datapack/data/smoochypit/functions/iteminfos/compass.tdn": -483201985,
+  "datapack/data/smoochypit/predicates/iteminfos/hold_food.json": -1462568338,
+  "datapack/data/smoochypit/functions/iteminfos/food.tdn": -1847774436,
+  "datapack/data/smoochypit/functions/iteminfos/tickplayer.tdn": 2122842216,
+  "datapack/data/global/advancements/smoochypit.json": -480751951,
+  "datapack/data/smoochypit/advancements/iteminfos/globaliteminfos.json": 1021028323,
+  "datapack/data/smoochypit/functions/iteminfos/config.tdn": -2008049499,
+  "datapack/data/smoochypit/predicates/iteminfos/hold_compass.json": 1669331662
+}

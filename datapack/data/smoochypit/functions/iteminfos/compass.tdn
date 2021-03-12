@@ -1,0 +1,348 @@
+define objective ii.xpos
+define objective ii.ypos
+define objective ii.zpos
+
+define objective ii.yrot
+define objective ii.xrot
+
+define objective ii.xpos.frac
+define objective ii.ypos.frac
+define objective ii.zpos.frac
+
+define objective ii.yrot.frac
+define objective ii.xrot.frac
+
+define objective ii.xspawn
+define objective ii.yspawn
+define objective ii.zspawn
+
+eval Tags.createTag(
+    "item",
+    resource</item>,
+    [(resource) (string) info_config.compass]
+)
+
+final var rot = {
+    
+    "S": real_range<-27.5..27.5>,
+    "SW": real_range<27.5..72.5>,
+    "W": real_range<72.5..117.5>,
+    "NW": real_range<117.5..162.5>,
+    "N": real_range<162.5..-162.5>,
+    "NE": real_range<-162.5..-117.5>,
+    "E": real_range<-117.5..-72.5>,
+    "SE": real_range<-72.5..-27.5>
+    
+}
+
+define function update_pos {
+    
+    store result score @s ii.xpos
+        data get entity @s Pos[0] 1
+    store result score @s ii.ypos
+        data get entity @s Pos[1] 1
+    store result score @s ii.zpos
+        data get entity @s Pos[2] 1
+    
+    store result score @s ii.yrot
+        data get entity @s Rotation[0] 1
+    store result score @s ii.xrot
+        data get entity @s Rotation[1] 1
+    
+    #account for -0
+    set @s-> ii.yrot += 1
+    set @s[scores={ii.xrot=..0}]->ii.xrot += 1
+    
+    set @s[scores={ii.yrot=..-180}]->ii.yrot += 359
+}
+
+define function update_pos_frac {
+    
+    store result score @s ii.xpos.frac
+        data get entity @s Pos[0] 100
+    store result score @s ii.ypos.frac
+        data get entity @s Pos[1] 100
+    store result score @s ii.zpos.frac
+        data get entity @s Pos[2] 100
+    
+    set @s[scores={ii.xpos.frac=..0}]->ii.xpos.frac *= -1
+    set @s[scores={ii.ypos.frac=..0}]->ii.ypos.frac *= -1
+    set @s[scores={ii.zpos.frac=..0}]->ii.zpos.frac *= -1
+    
+    set @s->ii.xpos.frac %= 100
+    set @s->ii.ypos.frac %= 100
+    set @s->ii.zpos.frac %= 100
+    
+    store result score @s ii.yrot.frac
+        data get entity @s Rotation[0] 10
+    store result score @s ii.xrot.frac
+        data get entity @s Rotation[1] 10
+    
+    set @s[scores={ii.yrot.frac=..-1800}]->ii.yrot.frac += 3600
+    
+    set @s[scores={ii.yrot.frac=..0}]->ii.yrot.frac *= -1
+    set @s[scores={ii.xrot.frac=..0}]->ii.xrot.frac *= -1
+    
+    set @s->ii.yrot.frac %= 10
+    set @s->ii.xrot.frac %= 10
+    
+}
+    
+define function update_spawnpoint {
+    
+    store result score @s ii.xspawn
+        data get entity @s SpawnX 1
+    store result score @s ii.yspawn
+        data get entity @s SpawnY 1
+    store result score @s ii.zspawn
+        data get entity @s SpawnZ 1
+    
+}
+    
+define function actionbar_display {
+    
+    for (dir in rot) {
+        
+        var func_dir = (resource) ("/" + dir.key.toLowerCase())
+        
+        if entity @s[y_rotation=${dir.value}]
+            function $func_dir {
+            
+            title @s actionbar {
+                "score":{
+                    "name":"@s",
+                    "objective":"ii.xpos"
+                },
+                "color":"red",
+                "extra":[
+                    {
+                        "text":" ",
+                        "color":"gold"
+                    },
+                    {
+                        "score":{
+                            "name":"@s",
+                            "objective":"ii.ypos"
+                        },
+                        "color":"green"
+                    },
+                    {
+                        "text":" ",
+                        "color":"gold"
+                    },
+                    {
+                        "score":{
+                            "name":"@s",
+                            "objective":"ii.zpos"
+                        },
+                        "color":"blue"
+                    },
+                    {
+                        "text":" | ",
+                        "color":"white"
+                    },
+                    {
+                        "text":${dir.key},
+                        "color":"gold"
+                    }
+                ]
+            }
+                
+        }
+            
+    }
+
+}
+
+define function actionbar_display_frac {
+    
+    title @s actionbar {
+        "score":{
+            "name":"@s",
+            "objective":"ii.xpos"
+        },
+        "color":"red",
+        "extra":[
+            {
+                "text":".",
+                "color":"red"
+            },
+            {
+                "score":{
+                    "name":"@s",
+                    "objective":"ii.xpos.frac"
+                },
+                "color":"red"
+            },
+            {
+                "text":" ",
+                "color":"gold"
+            },
+            {
+                "score":{
+                    "name":"@s",
+                    "objective":"ii.ypos"
+                },
+                "color":"green"
+            },
+            {
+                "text":".",
+                "color":"green"
+            },
+            {
+                "score":{
+                    "name":"@s",
+                    "objective":"ii.ypos.frac"
+                },
+                "color":"green"
+            },
+            {
+                "text":" ",
+                "color":"gold"
+            },
+            {
+                "score":{
+                    "name":"@s",
+                    "objective":"ii.zpos"
+                },
+                "color":"blue"
+            },
+            {
+                "text":".",
+                "color":"blue"
+            },
+            {
+                "score":{
+                    "name":"@s",
+                    "objective":"ii.zpos.frac"
+                },
+                "color":"blue"
+            },
+            {
+                "text":" | ",
+                "color":"white"
+            },
+            {
+                "score":{
+                    "name":"@s",
+                    "objective":"ii.yrot"
+                },
+                "color":"gold"
+            },
+            {
+                "text":".",
+                "color":"gold"
+            },
+            {
+                "score":{
+                    "name":"@s",
+                    "objective":"ii.yrot.frac"
+                },
+                "color":"gold"
+            },
+            {
+                "text":" / ",
+                "color":"gold"
+            },
+            {
+                "score":{
+                    "name":"@s",
+                    "objective":"ii.xrot"
+                },
+                "color":"gold"
+            },
+            {
+                "text":".",
+                "color":"gold"
+            },
+            {
+                "score":{
+                    "name":"@s",
+                    "objective":"ii.xrot.frac"
+                },
+                "color":"gold"
+            }
+        ]
+    }
+
+}
+
+define function lore_display {
+    
+    var line1 = new text_component({
+                    "score":{
+                        "name":"@s",
+                        "objective":"ii.xpos"
+                    },
+                    "color":"red",
+                    "italic":true,
+                    "extra":[
+                        {
+                            "text":" ",
+                            "color":"gold"
+                        },
+                        {
+                            "score":{
+                                "name":"@s",
+                                "objective":"ii.ypos"
+                            },
+                            "color":"green"
+                        },
+                        {
+                            "text":" ",
+                            "color":"gold"
+                        },
+                        {
+                            "score":{
+                                "name":"@s",
+                                "objective":"ii.zpos"
+                            },
+                            "color":"blue"
+                        }
+                    ]
+                })
+    var line2 = new text_component({
+                    "score":{
+                        "name":"@s",
+                        "objective":"ii.xspawn"
+                    },
+                    "color":"gray",
+                    "italic":false,
+                    "extra":[
+                        {
+                            "text":" ",
+                            "color":"gold"
+                        },
+                        {
+                            "score":{
+                                "name":"@s",
+                                "objective":"ii.yspawn"
+                            },
+                            "color":"gray"
+                        },
+                        {
+                            "text":" ",
+                            "color":"gold"
+                        },
+                        {
+                            "score":{
+                                "name":"@s",
+                                "objective":"ii.zspawn"
+                            },
+                            "color":"gray"
+                        }
+                    ]
+                })
+    
+    replaceitem entity @s inventory.0 compass{
+        display:{
+            Lore:[
+                
+                ${(string) line1},
+                ${(string) line2}
+                
+            ]
+        }
+    } 1
+    
+}

@@ -1,0 +1,14 @@
+@ on compile
+
+global final var info_config = {
+    
+    compass: item<minecraft:compass>,
+    daylight_detector: item<minecraft:daylight_detector>,
+    clock: item<minecraft:clock>
+    
+}
+
+#log info "Selected items:"
+#for (entry in config) {
+#    log info entry.key + ": " + entry.value
+#}

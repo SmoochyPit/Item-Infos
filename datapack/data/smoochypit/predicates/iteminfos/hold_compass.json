@@ -1,0 +1,29 @@
+{
+    "condition":"alternative",
+    "terms":[
+        
+        {
+            "condition":"entity_properties",
+            "entity":"this",
+            "predicate":{
+                "equipment":{
+                    "mainhand":{
+                        "tag":"smoochypit:iteminfos/compass/item"
+                    }
+                }
+            }
+        },
+        {
+            "condition":"entity_properties",
+            "entity":"this",
+            "predicate":{
+                "equipment":{
+                    "offhand":{
+                        "tag":"smoochypit:iteminfos/compass/item"
+                    }
+                }
+            }
+        }
+
+    ]
+}

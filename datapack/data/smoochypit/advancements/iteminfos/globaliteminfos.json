@@ -1,0 +1,17 @@
+{
+    "display": {
+        "title": "Item Infos",
+        "description": "Information provided by items. v0.1",
+        "icon": {
+            "item": "minecraft:compass"
+        },
+        "announce_to_chat": false,
+        "show_toast": false
+    },
+    "parent": "global:smoochypit",
+    "criteria": {
+        "trigger": {
+            "trigger": "minecraft:tick"
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+  "input-resources": "(automatically selected by Trident-UI)",
+  "output": {
+    "directories": {
+      "data-pack": "C:\\Users\\smooc\\AppData\\Roaming\\.minecraft\\saves\\CleanSlate\\datapacks\\iteminfos.zip",
+      "resource-pack": "C:\\Users\\smooc\\Trident\\workspace\\iteminfos\\out\\iteminfos-resources.zip"
+    },
+    "clean-directories": {
+      "data-pack": false,
+      "resource-pack": false
+    },
+    "export-comments": true,
+    "export-gamelog": true
+  },
+  "trident-ui": {
+    "actions": {
+      "pre": [],
+      "post": []
+    }
+  }
+}
