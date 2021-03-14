@@ -1,4 +1,5 @@
 @ on compile
+@ priority 2
 
 global final var info_config = {
     
