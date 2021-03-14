@@ -6,7 +6,33 @@ global final var info_config = {
     compass: item<minecraft:compass>,
     daylight_detector: item<minecraft:daylight_detector>,
     clock: item<minecraft:clock>,
-    use_24h_time: false
+    use_24h_time: true,
+    colors: {
+        compass: {
+            x: "red",
+            y: "green",
+            z: "blue",
+            divider: "white",
+            direction: "gold",
+            x_rot: "green",
+            y_rot: "red"
+        },
+        clock:{
+            hour: "aqua",
+            colon: "white",
+            minute: "aqua",
+            am: "gold",
+            pm: "dark_blue",
+            text: "white",
+            day: "gold",
+            tick: "gold"
+        },
+        daylight_detector:{
+            text: "white",
+            mob_unsafe: "red",
+            mob_safe: "green"
+        }
+    }
     
 }
 

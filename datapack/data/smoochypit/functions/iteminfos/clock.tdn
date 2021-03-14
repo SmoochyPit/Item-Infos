@@ -55,44 +55,54 @@ define function actionbar_display {
         
         title @s[scores={ii.hour=..9,ii.minute=10..}] actionbar {
             "text":"0",
-            "color":"gold",
+            "color":${info_config.colors.clock.hour},
             "extra":[
                 {
                     "score":{
                         "name":"@s",
                         "objective":"ii.hour"
-                    }
+                    },
+                    "color":${info_config.colors.clock.hour}
                 },
                 {
-                    "text":":"
+                    "text":":",
+                    "color":${info_config.colors.clock.colon}
                 },
                 {
                     "score":{
                         "name":"@s",
                         "objective":"ii.minute"
-                    }
+                    },
+                    "color":${info_config.colors.clock.minute}
                 }
             ]
         }
         
         title @s[scores={ii.hour=..9,ii.minute=..9}] actionbar {
             "text":"0",
-            "color":"gold",
+            "color":${info_config.colors.clock.hour},
             "extra":[
                 {
                     "score":{
                         "name":"@s",
                         "objective":"ii.hour"
-                    }
+                    },
+                    "color":${info_config.colors.clock.hour}
                 },
                 {
-                    "text":":0"
+                    "text":":",
+                    "color":${info_config.colors.clock.colon}
+                },
+                {
+                    "text":"0",
+                    "color":${info_config.colors.clock.minute}
                 },
                 {
                     "score":{
                         "name":"@s",
                         "objective":"ii.minute"
-                    }
+                    },
+                    "color":${info_config.colors.clock.minute}
                 }
             ]
         }
@@ -102,16 +112,18 @@ define function actionbar_display {
                 "name":"@s",
                 "objective":"ii.hour"
             },
-            "color":"gold",
+            "color":${info_config.colors.clock.hour},
             "extra":[
                 {
-                    "text":":"
+                    "text":":",
+                    "color":${info_config.colors.clock.colon}
                 },
                 {
                     "score":{
                         "name":"@s",
                         "objective":"ii.minute"
-                    }
+                    },
+                    "color":${info_config.colors.clock.minute}
                 }
             ]
         }
@@ -121,16 +133,22 @@ define function actionbar_display {
                 "name":"@s",
                 "objective":"ii.hour"
             },
-            "color":"gold",
+            "color":${info_config.colors.clock.hour},
             "extra":[
                 {
-                    "text":":0"
+                    "text":":",
+                    "color":${info_config.colors.clock.colon}
+                },
+                {
+                    "text":"0",
+                    "color":${info_config.colors.clock.minute}
                 },
                 {
                     "score":{
                         "name":"@s",
                         "objective":"ii.minute"
-                    }
+                    },
+                    "color":${info_config.colors.clock.minute}
                 }
             ]
         }
@@ -142,19 +160,22 @@ define function actionbar_display {
                 "name":"@s",
                 "objective":"ii.hour"
             },
-            "color":"gold",
+            "color":${info_config.colors.clock.hour},
             "extra":[
                 {
-                    "text":":"
+                    "text":":",
+                    "color":${info_config.colors.clock.colon}
                 },
                 {
                     "score":{
                         "name":"@s",
                         "objective":"ii.minute"
-                    }
+                    },
+                    "color":${info_config.colors.clock.minute}
                 },
                 {
-                    "text":" AM"
+                    "text":" AM",
+                    "color":${info_config.colors.clock.am}
                 }
             ]
         }
@@ -164,19 +185,26 @@ define function actionbar_display {
                 "name":"@s",
                 "objective":"ii.hour"
             },
-            "color":"gold",
+            "color":${info_config.colors.clock.hour},
             "extra":[
                 {
-                    "text":":0"
+                    "text":":",
+                    "color":${info_config.colors.clock.colon}
+                },
+                {
+                    "text":"0",
+                    "color":${info_config.colors.clock.minute}
                 },
                 {
                     "score":{
                         "name":"@s",
                         "objective":"ii.minute"
-                    }
+                    },
+                    "color":${info_config.colors.clock.minute}
                 },
                 {
-                    "text":" AM"
+                    "text":" AM",
+                    "color":${info_config.colors.clock.am}
                 }
             ]
         }
@@ -186,19 +214,22 @@ define function actionbar_display {
                 "name":"@s",
                 "objective":"ii.hour"
             },
-            "color":"gold",
+            "color":${info_config.colors.clock.hour},
             "extra":[
                 {
-                    "text":":"
+                    "text":":",
+                    "color":${info_config.colors.clock.colon}
                 },
                 {
                     "score":{
                         "name":"@s",
                         "objective":"ii.minute"
-                    }
+                    },
+                    "color":${info_config.colors.clock.minute}
                 },
                 {
-                    "text":" PM"
+                    "text":" PM",
+                    "color":${info_config.colors.clock.pm}
                 }
             ]
         }
@@ -208,19 +239,26 @@ define function actionbar_display {
                 "name":"@s",
                 "objective":"ii.hour"
             },
-            "color":"gold",
+            "color":${info_config.colors.clock.hour},
             "extra":[
                 {
-                    "text":":0"
+                    "text":":",
+                    "color":${info_config.colors.clock.colon}
+                },
+                {
+                    "text":"0",
+                    "color":${info_config.colors.clock.minute}
                 },
                 {
                     "score":{
                         "name":"@s",
                         "objective":"ii.minute"
-                    }
+                    },
+                    "color":${info_config.colors.clock.minute}
                 },
                 {
-                    "text":" PM"
+                    "text":" PM",
+                    "color":${info_config.colors.clock.pm}
                 }
             ]
         }
@@ -233,13 +271,14 @@ define function actionbar_display_raw {
     
     title @s actionbar {
         "text":"Day ",
-        "color":"gold",
+        "color":${info_config.colors.clock.text},
         "extra":[
             {
                 "score":{
                     "name":"@s",
                     "objective":"ii.day"
-                }
+                },
+                "color":${info_config.colors.clock.day}
             },
             {
                 "text":", Tick "
@@ -248,7 +287,8 @@ define function actionbar_display_raw {
                 "score":{
                     "name":"@s",
                     "objective":"ii.daytime"
-                }
+                },
+                "color":${info_config.colors.clock.tick}
             }
         ]
     }
