@@ -23,15 +23,30 @@ define function update_light {
 
 define function actionbar_display {
     
-    title @s actionbar {
+    title @s[scores={ii.light_level=..7}] actionbar {
         "text":"Light: ",
-        "color":"gold",
+        "color":"white",
         "extra":[
             {
                 "score":{
                     "name":"@s",
                     "objective":"ii.light_level"
-                }
+                },
+                "color":"red"
+            }
+        ]
+    }
+    
+    title @s[scores={ii.light_level=8..}] actionbar {
+        "text":"Light: ",
+        "color":"white",
+        "extra":[
+            {
+                "score":{
+                    "name":"@s",
+                    "objective":"ii.light_level"
+                },
+                "color":"green"
             }
         ]
     }
