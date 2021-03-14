@@ -1,5 +1,7 @@
 @ tag tick
 @ require smoochypit:iteminfos/compass
+@ require smoochypit:iteminfos/daylight_detector
+@ require smoochypit:iteminfos/clock
 
 define objective ii.sneak minecraft.custom:minecraft.sneak_time
 set @a->ii.sneak += 0
@@ -40,7 +42,35 @@ using tag ii.has_displayed_item @a {
     
         #TODO 1.17 Compass Lore Implementation
         
-        #TODO Clock Implementation
+        if entity @s[predicate=smoochypit:iteminfos/hold_clock,tag=!global.ignore.gui] function {
+            
+            tag @s add ii.displaying_actionbar
+            tag @s remove ii.has_displayed_item
+            
+            function smoochypit:iteminfos/clock/get_time
+            
+            if entity @s[
+                scores={
+                    ii.sneak=0
+                }
+            ]
+            function {
+                
+                function smoochypit:iteminfos/clock/get_converted_time
+                function smoochypit:iteminfos/clock/actionbar_display
+                
+            }
+            
+            if entity @s[
+                scores={
+                    ii.sneak=1
+                }
+            ]
+            function smoochypit:iteminfos/clock/actionbar_display_raw
+            
+        }
+        
+        #TODO 1.17 Clock Lore Implementation
         
         if entity @s[predicate=smoochypit:iteminfos/hold_daylight_detector,tag=!global.ignore.gui] function {
             

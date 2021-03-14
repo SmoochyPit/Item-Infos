@@ -1,0 +1,256 @@
+@ on compile
+
+define objective ii.daytime
+define objective ii.offs_daytime
+define objective ii.day
+define objective ii.hour
+define objective ii.minute
+
+if (!info_config.use_24h_time) {
+    define objective ii.isPM
+}
+
+eval Tags.createTag(
+    "item",
+    resource</item>,
+    [(resource) (string) info_config.clock]
+)
+
+define function get_time {
+    
+    store result score @s ii.daytime
+        time query daytime
+    store result score @s ii.day
+        time query day
+    
+}
+
+define function get_converted_time {
+    
+    set @s->ii.offs_daytime = @s->ii.daytime
+    set @s->ii.offs_daytime += 6000
+    set @s[scores={ii.offs_daytime=24000..}]->ii.offs_daytime -= 24000
+    
+    set @s->ii.hour = @s->ii.offs_daytime
+    set @s->ii.hour /= 1000
+    
+    set @s->ii.minute = @s->ii.offs_daytime
+    set @s->ii.minute %= 1000
+    set @s->ii.minute *= 60
+    set @s->ii.minute /= 1000
+    if (!info_config.use_24h_time) {
+        set @s->ii.isPM = 0
+        if score @s ii.hour matches 12..
+            set @s->ii.isPM = 1
+        
+        set @s[scores={ii.isPM=1}]->ii.hour -= 12
+        set @s[scores={ii.hour=0}]->ii.hour = 12
+    }
+    
+}
+
+define function actionbar_display {
+    
+    if (info_config.use_24h_time) {
+        
+        title @s[scores={ii.hour=..9,ii.minute=10..}] actionbar {
+            "text":"0",
+            "color":"gold",
+            "extra":[
+                {
+                    "score":{
+                        "name":"@s",
+                        "objective":"ii.hour"
+                    }
+                },
+                {
+                    "text":":"
+                },
+                {
+                    "score":{
+                        "name":"@s",
+                        "objective":"ii.minute"
+                    }
+                }
+            ]
+        }
+        
+        title @s[scores={ii.hour=..9,ii.minute=..9}] actionbar {
+            "text":"0",
+            "color":"gold",
+            "extra":[
+                {
+                    "score":{
+                        "name":"@s",
+                        "objective":"ii.hour"
+                    }
+                },
+                {
+                    "text":":0"
+                },
+                {
+                    "score":{
+                        "name":"@s",
+                        "objective":"ii.minute"
+                    }
+                }
+            ]
+        }
+        
+        title @s[scores={ii.hour=10..,ii.minute=10..}] actionbar {
+            "score":{
+                "name":"@s",
+                "objective":"ii.hour"
+            },
+            "color":"gold",
+            "extra":[
+                {
+                    "text":":"
+                },
+                {
+                    "score":{
+                        "name":"@s",
+                        "objective":"ii.minute"
+                    }
+                }
+            ]
+        }
+        
+        title @s[scores={ii.hour=10..,ii.minute=..9}] actionbar {
+            "score":{
+                "name":"@s",
+                "objective":"ii.hour"
+            },
+            "color":"gold",
+            "extra":[
+                {
+                    "text":":0"
+                },
+                {
+                    "score":{
+                        "name":"@s",
+                        "objective":"ii.minute"
+                    }
+                }
+            ]
+        }
+        
+    } else {
+        
+        title @s[scores={ii.isPM=0,ii.minute=10..}] actionbar {
+            "score":{
+                "name":"@s",
+                "objective":"ii.hour"
+            },
+            "color":"gold",
+            "extra":[
+                {
+                    "text":":"
+                },
+                {
+                    "score":{
+                        "name":"@s",
+                        "objective":"ii.minute"
+                    }
+                },
+                {
+                    "text":" AM"
+                }
+            ]
+        }
+        
+        title @s[scores={ii.isPM=0,ii.minute=..9}] actionbar {
+            "score":{
+                "name":"@s",
+                "objective":"ii.hour"
+            },
+            "color":"gold",
+            "extra":[
+                {
+                    "text":":0"
+                },
+                {
+                    "score":{
+                        "name":"@s",
+                        "objective":"ii.minute"
+                    }
+                },
+                {
+                    "text":" AM"
+                }
+            ]
+        }
+        
+        title @s[scores={ii.isPM=1,ii.minute=10..}] actionbar {
+            "score":{
+                "name":"@s",
+                "objective":"ii.hour"
+            },
+            "color":"gold",
+            "extra":[
+                {
+                    "text":":"
+                },
+                {
+                    "score":{
+                        "name":"@s",
+                        "objective":"ii.minute"
+                    }
+                },
+                {
+                    "text":" PM"
+                }
+            ]
+        }
+        
+        title @s[scores={ii.isPM=1,ii.minute=..9}] actionbar {
+            "score":{
+                "name":"@s",
+                "objective":"ii.hour"
+            },
+            "color":"gold",
+            "extra":[
+                {
+                    "text":":0"
+                },
+                {
+                    "score":{
+                        "name":"@s",
+                        "objective":"ii.minute"
+                    }
+                },
+                {
+                    "text":" PM"
+                }
+            ]
+        }
+        
+    }
+    
+}
+
+define function actionbar_display_raw {
+    
+    title @s actionbar {
+        "text":"Day ",
+        "color":"gold",
+        "extra":[
+            {
+                "score":{
+                    "name":"@s",
+                    "objective":"ii.day"
+                }
+            },
+            {
+                "text":", Tick "
+            },
+            {
+                "score":{
+                    "name":"@s",
+                    "objective":"ii.daytime"
+                }
+            }
+        ]
+    }
+    
+}

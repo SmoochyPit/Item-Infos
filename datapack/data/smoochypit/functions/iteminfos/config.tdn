@@ -5,7 +5,8 @@ global final var info_config = {
     
     compass: item<minecraft:compass>,
     daylight_detector: item<minecraft:daylight_detector>,
-    clock: item<minecraft:clock>
+    clock: item<minecraft:clock>,
+    use_24h_time: false
     
 }
 
