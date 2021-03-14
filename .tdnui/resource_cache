@@ -8,7 +8,7 @@
   "datapack/data/smoochypit/predicates/iteminfos/light_level/4.json": -1872103327,
   "datapack/data/smoochypit/functions/iteminfos/config.tdn": 201359547,
   "datapack/data/smoochypit/predicates/iteminfos/light_level/1.json": -645630652,
-  "datapack/pack.mcmeta": 1792117642,
+  "datapack/pack.mcmeta": 1802620746,
   "datapack/data/smoochypit/functions/iteminfos/compass.tdn": 1905021591,
   "datapack/data/smoochypit/predicates/iteminfos/light_level/8.json": 787567069,
   "datapack/data/smoochypit/predicates/iteminfos/hold_food.json": -1462568338,
@@ -29,6 +29,6 @@
   "datapack/pack.png": 2055963573,
   "datapack/data/smoochypit/functions/iteminfos/tickplayer.tdn": 392767949,
   "datapack/data/smoochypit/functions/iteminfos/daylight_sensor.tdn": 462610470,
-  "datapack/data/smoochypit/advancements/iteminfos/globaliteminfos.json": 1021028323,
+  "datapack/data/smoochypit/advancements/iteminfos/globaliteminfos.json": 1641167779,
   "datapack/data/smoochypit/predicates/iteminfos/light_level/14.json": -1911657974
 }
