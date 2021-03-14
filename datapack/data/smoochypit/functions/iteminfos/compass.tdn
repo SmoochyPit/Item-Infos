@@ -269,82 +269,83 @@ define function actionbar_display_frac {
 
 }
 
-define function lore_display {
-    
-    var line1 = new text_component({
-                    "score":{
-                        "name":"@s",
-                        "objective":"ii.xpos"
-                    },
-                    "color":"red",
-                    "italic":true,
-                    "extra":[
-                        {
-                            "text":" ",
-                            "color":"gold"
-                        },
-                        {
-                            "score":{
-                                "name":"@s",
-                                "objective":"ii.ypos"
-                            },
-                            "color":"green"
-                        },
-                        {
-                            "text":" ",
-                            "color":"gold"
-                        },
-                        {
-                            "score":{
-                                "name":"@s",
-                                "objective":"ii.zpos"
-                            },
-                            "color":"blue"
-                        }
-                    ]
-                })
-    var line2 = new text_component({
-                    "score":{
-                        "name":"@s",
-                        "objective":"ii.xspawn"
-                    },
-                    "color":"gray",
-                    "italic":false,
-                    "extra":[
-                        {
-                            "text":" ",
-                            "color":"gold"
-                        },
-                        {
-                            "score":{
-                                "name":"@s",
-                                "objective":"ii.yspawn"
-                            },
-                            "color":"gray"
-                        },
-                        {
-                            "text":" ",
-                            "color":"gold"
-                        },
-                        {
-                            "score":{
-                                "name":"@s",
-                                "objective":"ii.zspawn"
-                            },
-                            "color":"gray"
-                        }
-                    ]
-                })
-    
-    replaceitem entity @s inventory.0 compass{
-        display:{
-            Lore:[
-                
-                ${(string) line1},
-                ${(string) line2}
-                
-            ]
-        }
-    } 1
-    
-}
+#define function lore_display {
+#    
+#    var line1 = new text_component({
+#                    "score":{
+#                        "name":"@s",
+#                        "objective":"ii.xpos"
+#                    },
+#                    "color":"red",
+#                    "italic":true,
+#                    "extra":[
+#                        {
+#                            "text":" ",
+#                            "color":"gold"
+#                        },
+#                        {
+#                            "score":{
+#                                "name":"@s",
+#                                "objective":"ii.ypos"
+#                            },
+#                            "color":"green"
+#                        },
+#                        {
+#                            "text":" ",
+#                            "color":"gold"
+#                        },
+#                        {
+#                            "score":{
+#                                "name":"@s",
+#                                "objective":"ii.zpos"
+#                            },
+#                            "color":"blue"
+#                        }
+#                    ]
+#                })
+#    var line2 = new text_component({
+#                    "score":{
+#                        "name":"@s",
+#                        "objective":"ii.xspawn"
+#                    },
+#                    "color":"gray",
+#                    "italic":false,
+#                    "extra":[
+#                        {
+#                            "text":" ",
+#                            "color":"gold"
+#                        },
+#                        {
+#                            "score":{
+#                                "name":"@s",
+#                                "objective":"ii.yspawn"
+#                            },
+#                            "color":"gray"
+#                        },
+#                        {
+#                            "text":" ",
+#                            "color":"gold"
+#                        },
+#                        {
+#                            "score":{
+#                                "name":"@s",
+#                                "objective":"ii.zspawn"
+#                            },
+#                            "color":"gray"
+#                        }
+#                    ]
+#                })
+#    
+#    replaceitem entity @s inventory.0 compass{
+#        display:{
+#            Lore:[
+#                
+#                ${(string) line1},
+#                ${(string) line2}
+#                
+#            ]
+#        }
+#    } 1
+#    
+#}
+#
