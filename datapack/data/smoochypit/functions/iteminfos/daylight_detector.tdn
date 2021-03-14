@@ -25,14 +25,14 @@ define function actionbar_display {
     
     title @s[scores={ii.light_level=..7}] actionbar {
         "text":"Light: ",
-        "color":"white",
+        "color":${info_config.colors.daylight_detector.text},
         "extra":[
             {
                 "score":{
                     "name":"@s",
                     "objective":"ii.light_level"
                 },
-                "color":"red"
+                "color":${info_config.colors.daylight_detector.mob_unsafe}
             }
         ]
     }
@@ -46,7 +46,7 @@ define function actionbar_display {
                     "name":"@s",
                     "objective":"ii.light_level"
                 },
-                "color":"green"
+                "color":${info_config.colors.daylight_detector.mob_safe}
             }
         ]
     }

@@ -14,8 +14,8 @@ global final var info_config = {
             z: "blue",
             divider: "white",
             direction: "gold",
-            x_rot: "green",
-            y_rot: "red"
+            y_rot: "gold",
+            x_rot: "light_purple"
         },
         clock:{
             hour: "aqua",
