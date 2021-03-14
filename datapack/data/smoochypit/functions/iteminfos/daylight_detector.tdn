@@ -1,0 +1,39 @@
+@ on compile
+
+define objective ii.light_level
+
+eval Tags.createTag(
+    "item",
+    resource</item>,
+    [(resource) (string) info_config.daylight_detector]
+)
+
+final var ll_path = "smoochypit:iteminfos/light_level/"
+
+define function update_light {
+    
+    for (var l = 0;l<16;l++) {
+        
+        if predicate ${(resource) (ll_path + l)}
+            set @s->ii.light_level = $l
+        
+    }
+    
+}
+
+define function actionbar_display {
+    
+    title @s actionbar {
+        "text":"Light: ",
+        "color":"gold",
+        "extra":[
+            {
+                "score":{
+                    "name":"@s",
+                    "objective":"ii.light_level"
+                }
+            }
+        ]
+    }
+    
+}

@@ -8,7 +8,7 @@ tag @a remove ii.displaying_actionbar
 
 using tag ii.has_displayed_item @a {
     
-    as @a[tag=ii.has_displayed_item] expand {
+    as @a[tag=ii.has_displayed_item] at @s expand {
     
         if entity @s[predicate=smoochypit:iteminfos/hold_compass,tag=!global.ignore.gui] function {
         
@@ -42,7 +42,17 @@ using tag ii.has_displayed_item @a {
         
         #TODO Clock Implementation
         
-        #TODO Light Sensor
+        if entity @s[predicate=smoochypit:iteminfos/hold_daylight_detector,tag=!global.ignore.gui] function {
+            
+            tag @s add ii.displaying_actionbar
+            tag @s remove ii.has_displayed_item
+            
+            function {
+                function smoochypit:iteminfos/daylight_detector/update_light
+                function smoochypit:iteminfos/daylight_detector/actionbar_display
+            }
+            
+        }
 
     }
     

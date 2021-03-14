@@ -1,3 +1,5 @@
+@ on compile
+
 define objective ii.xpos
 define objective ii.ypos
 define objective ii.zpos
