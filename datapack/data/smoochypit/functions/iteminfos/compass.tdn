@@ -115,37 +115,37 @@ define function actionbar_display {
                     "name":"@s",
                     "objective":"ii.xpos"
                 },
-                "color":"red",
+                "color":${info_config.colors.compass.x},
                 "extra":[
                     {
                         "text":" ",
-                        "color":"gold"
+                        "color":${info_config.colors.compass.divider}
                     },
                     {
                         "score":{
                             "name":"@s",
                             "objective":"ii.ypos"
                         },
-                        "color":"green"
+                        "color":${info_config.colors.compass.y}
                     },
                     {
                         "text":" ",
-                        "color":"gold"
+                        "color":${info_config.colors.compass.divider}
                     },
                     {
                         "score":{
                             "name":"@s",
                             "objective":"ii.zpos"
                         },
-                        "color":"blue"
+                        "color":${info_config.colors.compass.z}
                     },
                     {
                         "text":" | ",
-                        "color":"white"
+                        "color":${info_config.colors.compass.divider}
                     },
                     {
                         "text":${dir.key},
-                        "color":"gold"
+                        "color":${info_config.colors.compass.direction}
                     }
                 ]
             }
@@ -163,106 +163,106 @@ define function actionbar_display_frac {
             "name":"@s",
             "objective":"ii.xpos"
         },
-        "color":"red",
+        "color":${info_config.colors.compass.x},
         "extra":[
             {
                 "text":".",
-                "color":"red"
+                "color":${info_config.colors.compass.x}
             },
             {
                 "score":{
                     "name":"@s",
                     "objective":"ii.xpos.frac"
                 },
-                "color":"red"
+                "color":${info_config.colors.compass.x}
             },
             {
                 "text":" ",
-                "color":"gold"
+                "color":${info_config.colors.compass.divider}
             },
             {
                 "score":{
                     "name":"@s",
                     "objective":"ii.ypos"
                 },
-                "color":"green"
+                "color":${info_config.colors.compass.y}
             },
             {
                 "text":".",
-                "color":"green"
+                "color":${info_config.colors.compass.y}
             },
             {
                 "score":{
                     "name":"@s",
                     "objective":"ii.ypos.frac"
                 },
-                "color":"green"
+                "color":${info_config.colors.compass.y}
             },
             {
                 "text":" ",
-                "color":"gold"
+                "color":${info_config.colors.compass.divider}
             },
             {
                 "score":{
                     "name":"@s",
                     "objective":"ii.zpos"
                 },
-                "color":"blue"
+                "color":${info_config.colors.compass.z}
             },
             {
                 "text":".",
-                "color":"blue"
+                "color":${info_config.colors.compass.z}
             },
             {
                 "score":{
                     "name":"@s",
                     "objective":"ii.zpos.frac"
                 },
-                "color":"blue"
+                "color":${info_config.colors.compass.z}
             },
             {
                 "text":" | ",
-                "color":"white"
+                "color":${info_config.colors.compass.divider}
             },
             {
                 "score":{
                     "name":"@s",
                     "objective":"ii.yrot"
                 },
-                "color":"gold"
+                "color":${info_config.colors.compass.y_rot}
             },
             {
                 "text":".",
-                "color":"gold"
+                "color":${info_config.colors.compass.y_rot}
             },
             {
                 "score":{
                     "name":"@s",
                     "objective":"ii.yrot.frac"
                 },
-                "color":"gold"
+                "color":${info_config.colors.compass.y_rot}
             },
             {
-                "text":" / ",
-                "color":"gold"
+                "text":" ",
+                "color":${info_config.colors.compass.divider}
             },
             {
                 "score":{
                     "name":"@s",
                     "objective":"ii.xrot"
                 },
-                "color":"gold"
+                "color":${info_config.colors.compass.x_rot}
             },
             {
                 "text":".",
-                "color":"gold"
+                "color":${info_config.colors.compass.x_rot}
             },
             {
                 "score":{
                     "name":"@s",
                     "objective":"ii.xrot.frac"
                 },
-                "color":"gold"
+                "color":${info_config.colors.compass.x_rot}
             }
         ]
     }
