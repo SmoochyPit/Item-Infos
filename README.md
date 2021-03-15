@@ -58,7 +58,7 @@ Holding a daylight detector:
 2. Click "Data Packs"
 3. Drag the downloaded file onto your Minecraft window (toggle fullscreen with F11)
 4. Click "Yes"
-5. Hover over Warp Pads in the menu and click the right arrow to add it to the list of selected data packs
+5. Hover over Item Infos in the menu and click the right arrow to add it to the list of selected data packs
 6. Click "Done" and change any other world options you want
 7. Click "Create New World"
 
