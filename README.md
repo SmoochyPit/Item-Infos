@@ -75,7 +75,7 @@ Supports Minecraft: Java Edition 1.16-1.16.5. I plan to maintain this data pack 
 
 ### Uninstalling
 
-There is currently no way of cleanly uninstalling this data pack. Removing it will leave behind objectives. I plan to add an uninstallation function in the near-future.
+To uninstall, run `/function smoochypit:iteminfos/uninstall`. This will remove all objectives created by the data pack.
 
 ### Configuration
 

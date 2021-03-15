@@ -4,6 +4,7 @@
   "datapack/data/smoochypit/predicates/iteminfos/hold_daylight_detector.json": -464551186,
   "datapack/data/smoochypit/functions/iteminfos/clock.tdn": -1988204483,
   "datapack/data/smoochypit/predicates/iteminfos/light_level/15.json": 1974485097,
+  "datapack/data/smoochypit/functions/iteminfos/uninstall.mcfunction": -1359662093,
   "datapack/data/smoochypit/predicates/iteminfos/light_level/7.json": 1196391294,
   "datapack/data/smoochypit/predicates/iteminfos/light_level/4.json": -1872103327,
   "datapack/data/smoochypit/functions/iteminfos/config.tdn": 201359547,
