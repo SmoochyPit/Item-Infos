@@ -2,6 +2,9 @@
 
 Item Infos is a data pack for Minecraft: Java Edition which displays information based on the player's currently held item. It is designed to work as an immersive alternative to the F3 debug screen. Designed to work alongside [Food Items](https://github.com/SmoochyPit/Food-Infos) or as a standalone data pack.
 
+![Certified Compatibility + Stamp of Quality](https://i.imgur.com/ltLPoQp.png)
+([Datapack Conventions?](https://mc-datapacks.github.io/en/))
+
 ## About 
 
 ### Features
