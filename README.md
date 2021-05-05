@@ -1,6 +1,9 @@
 # Item Infos
 
-Item Infos is a data pack for Minecraft: Java Edition which displays information based on the player's currently held item. It is designed to work as an immersive alternative to the F3 debug screen.
+Item Infos is a data pack for Minecraft: Java Edition which displays information based on the player's currently held item. It is designed to work as an immersive alternative to the F3 debug screen. Designed to work alongside [Food Items](https://github.com/SmoochyPit/Food-Infos) or as a standalone data pack.
+
+![Certified Compatibility + Stamp of Quality](https://i.imgur.com/ltLPoQp.png)
+([Datapack Conventions?](https://mc-datapacks.github.io/en/))
 
 ## About 
 
@@ -58,7 +61,7 @@ Holding a daylight detector:
 2. Click "Data Packs"
 3. Drag the downloaded file onto your Minecraft window (toggle fullscreen with F11)
 4. Click "Yes"
-5. Hover over Warp Pads in the menu and click the right arrow to add it to the list of selected data packs
+5. Hover over Item Infos in the menu and click the right arrow to add it to the list of selected data packs
 6. Click "Done" and change any other world options you want
 7. Click "Create New World"
 
@@ -75,7 +78,7 @@ Supports Minecraft: Java Edition 1.16-1.16.5. I plan to maintain this data pack 
 
 ### Uninstalling
 
-There is currently no way of cleanly uninstalling this data pack. Removing it will leave behind objectives. I plan to add an uninstallation function in the near-future.
+To uninstall, run `/function smoochypit:iteminfos/uninstall`. This will remove all objectives created by the data pack.
 
 ### Configuration
 
