@@ -2,7 +2,7 @@
   "input-resources": "(automatically selected by Trident-UI)",
   "output": {
     "directories": {
-      "data-pack": "C:\\Users\\smooc\\AppData\\Roaming\\.minecraft\\saves\\CleanSlate\\datapacks\\iteminfos.zip",
+      "data-pack": "C:\\Users\\smooc\\Trident\\workspace\\iteminfos\\out\\iteminfos.zip",
       "resource-pack": "C:\\Users\\smooc\\Trident\\workspace\\iteminfos\\out\\iteminfos-resources.zip"
     },
     "clean-directories": {
