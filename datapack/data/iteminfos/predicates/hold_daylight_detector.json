@@ -8,7 +8,7 @@
             "predicate":{
                 "equipment":{
                     "mainhand":{
-                        "tag":"smoochypit:iteminfos/daylight_detector/item"
+                        "tag":"iteminfos:daylight_detector/item"
                     }
                 }
             }
@@ -19,7 +19,7 @@
             "predicate":{
                 "equipment":{
                     "offhand":{
-                        "tag":"smoochypit:iteminfos/daylight_detector/item"
+                        "tag":"iteminfos:daylight_detector/item"
                     }
                 }
             }

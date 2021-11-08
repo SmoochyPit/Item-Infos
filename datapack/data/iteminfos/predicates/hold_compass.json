@@ -8,7 +8,7 @@
             "predicate":{
                 "equipment":{
                     "mainhand":{
-                        "tag":"smoochypit:iteminfos/compass/item"
+                        "tag":"iteminfos:compass/item"
                     }
                 }
             }
@@ -19,7 +19,7 @@
             "predicate":{
                 "equipment":{
                     "offhand":{
-                        "tag":"smoochypit:iteminfos/compass/item"
+                        "tag":"iteminfos:compass/item"
                     }
                 }
             }

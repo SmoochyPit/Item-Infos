@@ -78,7 +78,7 @@ Supports Minecraft: Java Edition 1.16-1.16.5. I plan to maintain this data pack 
 
 ### Uninstalling
 
-To uninstall, run `/function smoochypit:iteminfos/uninstall`. This will remove all objectives created by the data pack.
+To uninstall, run `/function iteminfos:uninstall`. This will remove all objectives created by the data pack.
 
 ### Configuration
 
@@ -88,7 +88,7 @@ Configuration is handled by Trident during compilation. To compile the modified 
     * If using Trident UI, place this folder in your workspace folder
 2. Change the output location in the file `.tdnproj`
     * If using Trident UI, this option is found under `File > Project Properties > Output > Data Pack Output` (Make sure to select the project in the explorer panel)
-3. Config is located at `datapack\data\smoochypit\functions\iteminfos\config.tdn`
+3. Config is located at `datapack\data\iteminfos\functions\config.tdn`
 4. Compile the project (Alt-Shift-X in Trident UI)
 
 ## Credits

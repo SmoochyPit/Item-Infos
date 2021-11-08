@@ -8,7 +8,7 @@
             "predicate":{
                 "equipment":{
                     "mainhand":{
-                        "tag":"smoochypit:iteminfos/clock/item"
+                        "tag":"iteminfos:clock/item"
                     }
                 }
             }
@@ -19,7 +19,7 @@
             "predicate":{
                 "equipment":{
                     "offhand":{
-                        "tag":"smoochypit:iteminfos/clock/item"
+                        "tag":"iteminfos:clock/item"
                     }
                 }
             }
