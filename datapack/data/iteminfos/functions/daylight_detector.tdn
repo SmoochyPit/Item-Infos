@@ -8,7 +8,7 @@ eval Tags.createTag(
     [(resource) (string) info_config.daylight_detector]
 )
 
-final var ll_path = "smoochypit:iteminfos/light_level/"
+final var ll_path = "iteminfos:light_level/"
 
 define function update_light {
     

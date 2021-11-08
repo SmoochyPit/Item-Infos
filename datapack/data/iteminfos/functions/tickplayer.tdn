@@ -1,7 +1,7 @@
 @ tag tick
-@ require smoochypit:iteminfos/compass
-@ require smoochypit:iteminfos/daylight_detector
-@ require smoochypit:iteminfos/clock
+@ require iteminfos:compass
+@ require iteminfos:daylight_detector
+@ require iteminfos:clock
 
 define objective ii.sneak minecraft.custom:minecraft.sneak_time
 set @a->ii.sneak += 0
@@ -12,19 +12,19 @@ using tag ii.has_displayed_item @a {
     
     as @a[tag=ii.has_displayed_item] at @s expand {
     
-        if entity @s[predicate=smoochypit:iteminfos/hold_compass,tag=!global.ignore.gui] function {
+        if entity @s[predicate=iteminfos:hold_compass,tag=!global.ignore.gui] function {
         
             tag @s add ii.displaying_actionbar
             tag @s remove ii.has_displayed_item
             
-            function smoochypit:iteminfos/compass/update_pos
+            function iteminfos:compass/update_pos
         
             if entity @s[
                 scores={
                     ii.sneak=0
                 }
             ] 
-            function smoochypit:iteminfos/compass/actionbar_display
+            function iteminfos:compass/actionbar_display
         
             if entity @s[
                 scores={
@@ -33,8 +33,8 @@ using tag ii.has_displayed_item @a {
             ] 
             function {
                     
-                function smoochypit:iteminfos/compass/update_pos_frac
-                function smoochypit:iteminfos/compass/actionbar_display_frac
+                function iteminfos:compass/update_pos_frac
+                function iteminfos:compass/actionbar_display_frac
                 
             }
         
@@ -42,12 +42,12 @@ using tag ii.has_displayed_item @a {
     
         #TODO 1.17 Compass Lore Implementation
         
-        if entity @s[predicate=smoochypit:iteminfos/hold_clock,tag=!global.ignore.gui] function {
+        if entity @s[predicate=iteminfos:hold_clock,tag=!global.ignore.gui] function {
             
             tag @s add ii.displaying_actionbar
             tag @s remove ii.has_displayed_item
             
-            function smoochypit:iteminfos/clock/get_time
+            function iteminfos:clock/get_time
             
             if entity @s[
                 scores={
@@ -56,8 +56,8 @@ using tag ii.has_displayed_item @a {
             ]
             function {
                 
-                function smoochypit:iteminfos/clock/get_converted_time
-                function smoochypit:iteminfos/clock/actionbar_display
+                function iteminfos:clock/get_converted_time
+                function iteminfos:clock/actionbar_display
                 
             }
             
@@ -66,20 +66,20 @@ using tag ii.has_displayed_item @a {
                     ii.sneak=1
                 }
             ]
-            function smoochypit:iteminfos/clock/actionbar_display_raw
+            function iteminfos:clock/actionbar_display_raw
             
         }
         
         #TODO 1.17 Clock Lore Implementation
         
-        if entity @s[predicate=smoochypit:iteminfos/hold_daylight_detector,tag=!global.ignore.gui] function {
+        if entity @s[predicate=iteminfos:hold_daylight_detector,tag=!global.ignore.gui] function {
             
             tag @s add ii.displaying_actionbar
             tag @s remove ii.has_displayed_item
             
             function {
-                function smoochypit:iteminfos/daylight_detector/update_light
-                function smoochypit:iteminfos/daylight_detector/actionbar_display
+                function iteminfos:daylight_detector/update_light
+                function iteminfos:daylight_detector/actionbar_display
             }
             
         }
